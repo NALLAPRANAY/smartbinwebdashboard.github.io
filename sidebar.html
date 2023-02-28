@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            SmartBin
+        </title>
+        <!-- material icons -->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp"
+    rel="stylesheet">
+        <style>
+            *{
+                margin:0;
+                padding:0;
+                font-family: 'Roboto', sans-serif;
+
+            }
+            #sidebar{
+                background-color: rgb(44, 50, 88);
+                width:13%;
+                height:100%;
+                color:white;
+                float:left;
+                position:fixed;
+            }
+            #topbar{
+               
+                width:87%;
+                margin-left:13%;
+                padding-top:20px;
+                padding-bottom:20px;
+                position:fixed;
+                
+            }
+            #smartbin{
+                margin-bottom:40px;
+                font-size:150%;
+                margin-top:15px;
+                padding:5px;
+                color:rgb(12, 250, 12)
+            }
+            span{
+                margin-top:40px;
+                margin-bottom:20px;
+            }
+            #logout-button{
+                position:absolute;
+                bottom:2rem;
+            }
+            span{
+                margin-left:5px;
+            }
+            b{  
+            
+                margin-left:10px;
+                font-size: 120%;
+            }
+            button{
+                color:black;
+                border:none;
+                background-color: rgb(44, 50, 88);
+                border-start-start-radius: 5px;
+                border-end-start-radius: 5px;
+                width:100%;
+                text-align: left;
+            }
+   
+            
+            #web{
+                font-size:160%;
+                margin-left: 450px;
+              
+            }
+            #content{
+                margin-left:200px;
+            }
+            #image1{
+                position:absolute;
+                top:140px;
+            }
+            img{
+                border:1px solid grey;
+                border-radius: 50%;
+                
+            }
+            figcaption{   
+                text-align: center;
+            }
+            #notifi{
+                position:absolute;
+                top:610px;
+                align-items: center;
+                right:150px
+            }
+            #image2{
+                position:absolute;
+                margin-left:850px;
+                top:140px
+            }
+            #image3{
+                position:absolute;
+                top:400px;
+            }
+            #image4{
+              margin-left: 850px;
+            }
+            #EEE{
+                position: absolute;
+                margin-left:340px;
+                top:350px;
+                font-size: 150%;
+            }
+            iframe{
+                width:1140px;
+                height:590px;
+                position:absolute;
+                top:80px;
+                left:203px;
+                z-index:-1;
+            }
+            #dept{
+                position:absolute;
+                left:490px;
+                top:100px;
+                font-size: 150%;
+                color:rgb(26, 10, 249)
+            }
+            #features{
+                text-align: center;
+            }
+        </style>
+         <!-- jquery/javascript -->
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+          <!-- jquery ui -->
+        <script src="HTML/infosys/ui/jquery-ui-1/jquery-ui.js"></script>
+        <!-- css stylesheet jquery  -->
+        <link href="jquery-ui-1/jquery-ui.css" rel="stylesheet">
+    </head>
+    
+    <body>
+        <div id="sidebar">
+            <div id="smartbin">
+               <h3>SMARTBIN</h3>
+            </div>
+            <!-- home button -->
+            <button id="home-button">
+                <span class="material-icons-sharp">
+                    home
+                </span>
+                <b> Home</b>
+            </button><br>
+            <!-- monitoring button -->
+            <button id="monitoring-button">
+                <span class="material-icons-sharp span">
+                    insights
+                </span>
+                <b>Monitoring</b>
+            </button><br>
+
+            <div id="iframe-monitoring" style="display: none;">
+                <iframe src="/HTML/Smartbin_FInal/monitoring.html" frameborder="0" scrolling="yes"></iframe>
+            </div>
+            <!-- map button -->
+            <button id="map-button">
+                <span class="material-icons-sharp span" id="map">
+                    map
+                </span>
+                <b>Maps</b>
+            </button><br>
+
+            <div id="iframe-map" style="display: none;">
+                <iframe src="/HTML/Smartbin_FInal/map.html" frameborder="0" scrolling="yes"></iframe>
+            </div>
+            <!-- search button -->
+            <button id="search-button">
+                <span class="material-icons-sharp span">
+                search
+                </span>
+                <b>Search</b>
+            </button> <br>
+                    
+            <div id="iframe-search" style="display: none;">
+                <iframe src="/HTML/Smartbin_FInal/serach.html" frameborder="0" scrolling="yes"></iframe>
+            </div>
+            <!-- about us button -->
+            <button id="aboutus-button">
+                <span class="material-icons-sharp span">
+                info
+                </span> 
+                <b>About us</b>
+            </button><br>
+
+            <div id="iframe-aboutus" style="display: none;">
+                <iframe src="/HTML/Smartbin_FInal/aboutus.html" frameborder="0" scrolling="yes"></iframe>
+            </div>
+            <!-- logout button -->
+            <button id="logout-button">
+                <span class="material-icons-sharp span">
+                logout
+                </span> 
+                <b>Logout</b>
+            </button>
+        </div>
+
+        <div>
+            <div id="topbar"><sapn id="web"><b>WEB DASHBOARD</b></sapn></div>
+            <div id="content">
+                <div id="image1">
+                    <img src="/HTML/SmartBin/pic1.jpeg" width="200" height="200" title="Smartbin">
+                    <figcaption>Smart bin</figcaption>
+                </div>
+                <div id="image2">
+                    <img src="/HTML/SmartBin/monitor.jpg" width="200" height="200" title="Monitoring of bins">
+                    <figcaption> Monitoring</figcaption>
+                </div>
+                <div id="image3">
+                    <img src="/HTML/SmartBin/map icon.png" width="200" height="200" title="location of bins">
+                    <figcaption>Bin Locations</figcaption>
+                    
+                </div>
+
+                <div id="image4">
+                    <img src="/HTML/Smartbin_FInal/images/phonealert.jpg" width="200" height="200" id="image3" title="alert notification when bin is filled">
+                    <figcaption id="notifi">Alert Notifications</figcaption>
+                </div>
+
+                <div id="dept">
+                    <span>Department of Electrical and electronics Enginering</span>
+                </div>
+               
+                <div id="EEE">
+                   
+                    <p>
+                        IoT Based Smartbin Monitoring <br>
+                                           
+                    </p>
+                    <p id="features"> Features</p>
+                </div>
+            </div>
+            <script type="text/javascript">
+                $("#home-button").css("background-color","white")
+                $("#home-button").click(function(){
+                    $("#iframe-monitoring").css("display","none");
+                    $("#iframe-map").css("display","none");
+                    $("#iframe-search").css("display","none");
+                    $("#iframe-aboutus").css("display","none");
+                    $("#content").show();
+                    
+                   
+                    // $(this).css("background-color","white")
+                    // $("#monitoring-button").css("background-color","rgb(44, 50, 88)")
+                    // $("#map-button").css("background-color","rgb(44, 50, 88)")
+                    // $("#search-button").css("background-color","rgb(44, 50, 88)")
+                    // $("#aboutus-button").css("background-color","rgb(44, 50, 88)")
+                })
+                $("#monitoring-button").click(function(){
+                    $("#content").css("display","none");
+                    $("#iframe-map").css("display","none");
+                    $("#iframe-search").css("display","none");
+                    $("#iframe-aboutus").css("display","none");
+                    $("#iframe-monitoring").show();
+
+                    $(this).css("background-color","white")
+                   
+                    $("#home-button").css("background-color","rgb(44, 50, 88)")
+                    $("#map-button").css("background-color","rgb(44, 50, 88)")
+                    $("#search-button").css("background-color","rgb(44, 50, 88)")
+                    $("#aboutus-button").css("background-color","rgb(44, 50, 88)")
+                })
+                $("#map-button").click(function(){
+                    $("#content").css("display","none");
+                    $("#iframe-monitoring").css("display","none");
+                    $("#iframe-search").css("display","none");
+                    $("#iframe-aboutus").css("display","none");
+                    $("#iframe-map").show();
+
+                    $(this).css("background-color","white")
+                    $("#monitoring-button").css("background-color","rgb(44, 50, 88)")
+                    $("#home-button").css("background-color","rgb(44, 50, 88)")
+                    $("#search-button").css("background-color","rgb(44, 50, 88)")
+                    $("#aboutus-button").css("background-color","rgb(44, 50, 88)")
+                })
+                
+                $("#search-button").click(function(){
+                    
+                    $("#content").css("display","none");
+                    $("#iframe-monitoring").css("display","none");
+                    $("#iframe-aboutus").css("display","none");
+                    $("#iframe-map").css("display","none");
+                    $("#iframe-search").show();
+
+                    $(this).css("background-color","white")
+                    $("#monitoring-button").css("background-color","rgb(44, 50, 88)")
+                    $("#map-button").css("background-color","rgb(44, 50, 88)")
+                    $("#home-button").css("background-color","rgb(44, 50, 88)")
+                    $("#aboutus-button").css("background-color","rgb(44, 50, 88)")
+                })
+                $("#aboutus-button").click(function(){
+                    $("#content").css("display","none");
+                    $("#iframe-monitoring").css("display","none");
+                    $("#iframe-search").css("display","none");
+                    $("#iframe-map").css("display","none");
+                    $("#iframe-aboutus").show();
+
+                    $(this).css("background-color","white")
+                    $("#monitoring-button").css("background-color","rgb(44, 50, 88)")
+                    $("#map-button").css("background-color","rgb(44, 50, 88)")
+                    $("#search-button").css("background-color","rgb(44, 50, 88)")
+                    $("#home-button").css("background-color","rgb(44, 50, 88)")
+                })
+                $("#logout-button").click(function(){
+                    window.location.href="login.html"
+                })
+                
+            </script>
+            
+    </body>
+</html>

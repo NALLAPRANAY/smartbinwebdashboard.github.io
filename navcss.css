@@ -1,0 +1,112 @@
+*{
+    margin:0;
+    padding:0;
+    overflow: none;
+
+
+}
+.body{
+    background-color:rgb(227, 227, 232);
+    display:flex;
+}
+.side{
+    width:15%
+}
+.title{
+     
+    background-color: rgb(59, 59, 61);
+    margin:0;
+    padding:25px;
+    font-size: 1.5rem;
+    
+}
+.sidebar{
+    background-color: rgb(59, 59, 61);
+    position:fixed;
+    width:15%;
+    height:100%;
+    
+}
+.sidebar .span{
+    color:rgb(30, 229, 16);
+    padding:0.5rem;
+    line-height: 5rem;
+
+   
+}
+.logout{
+    position:absolute;
+    bottom:2rem;
+}
+.web{
+    color:rgb(17, 250, 17);
+    background-color:  rgb(59, 59, 61);
+    position:fixed;
+    margin-left: 0px;
+    text-align: center;
+    width:90%;
+    height:4.5%;
+    padding:20px;
+    overflow:hidden;
+    
+}
+
+
+
+/* content  */
+.content{
+    text-align: center;
+    /* margin-top: 50%;
+    margin-left:50%; */
+    /* margin-top:50%;
+    margin-left:0%;
+    margin-right:-100%; */
+    position:absolute;
+    top:20rem;
+    left:30rem;
+    overflow:hidden;
+    font-size:xx-large;
+    color:rgb(255, 94, 0)
+}
+.image1{
+    position:absolute;
+     bottom:4rem;
+     margin-left:15px;
+}
+.image2{
+    position:absolute;
+    right:2rem;
+    top:5rem
+}
+.image3{
+    position:absolute;
+    right: 2rem;
+    bottom: 4rem;
+}
+.image4{
+    position:absolute;
+    top:6rem;
+    margin-left:15px;
+}
+figcaption{
+    text-align: center;
+}
+
+b{
+    color:rgb(14, 221, 6)
+}
+#button{
+    background-color: rgb(59, 59, 61);
+    color:rgb(14, 221, 6);
+    border:none;
+    font-size: 120%;
+}
+iframe{
+    width:1140px;
+    height:590px;
+    position:absolute;
+    top:80px;
+    left:203px;
+    z-index:-1;
+    
+}

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Search
+        </title>
+        <!-- material icons -->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp"
+    rel="stylesheet">
+    <!-- jquery/javascript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <style>
+        body{
+            font-family: 'Roboto', sans-serif;
+        }
+        #search{
+            
+            float:left;
+            margin-top:40px;
+            
+        }
+        button{
+            border:none;
+            padding-top: 10px ;
+        }
+        input{
+          width:450px;
+          margin-left:400px;
+          padding:10px
+        }
+        #button-div{
+            margin-top: 20px;
+            margin-left: 420px;
+        }
+        iframe{
+                width:1150px;
+                height:590px;
+                position:absolute;
+                top:80px;
+                left:3px;
+                z-index:-1;
+        }
+        #notfound{
+            display:none;
+            position:absolute;
+            top:150px;
+            left:500px;
+            font-size: 250%;
+            color:red;
+            border:1px solid red;
+            padding:20px
+        }
+    </style>
+    </head>
+    <body>
+        <div id="search">
+            <input type="text" placeholder="Search">
+            <button>
+                <span class="material-icons-sharp">
+                    search
+                </span>
+            </button>
+        </div>
+        <div id="notfound">
+            <span id="result">Not found !</span>
+        </div>
+            <div  id="smartbin1" style="display:none;">
+                <iframe src="/HTML/Smartbin_FInal/smartbin1.html" frameborder="0" scrolling="yes"></iframe>
+            </div>
+            <div  id="smartbin2" style="display:none">
+                <iframe src="/HTML/Smartbin_FInal/smartbin2.html" frameborder="0" scrolling="yes"></iframe>
+            </div>
+            <div id="smartbin3" style="display:none">
+                <iframe src="/HTML/Smartbin_FInal/smartbin3.html" frameborder="0" scrolling="yes" ></iframe>
+            </div>
+            <div id="searchhtml" style="display:none">
+                <iframe src="/HTML/Smartbin_FInal/serach.html" frameborder="0" scrolling="yes" ></iframe>
+            </div>
+        
+        <script>
+           
+            $("button").click(function(){
+               
+                var searchiteam=$("input").val();
+                if(searchiteam=="smartbin1"){
+                    $("smartbin2").css("display","none")
+                    $("smartbin3").css("display","none")
+                    $("#search").css("display","none")
+                    $("#notfound").css("display","none")
+                    $("#smartbin1").show()
+                    console.log("1")
+                }
+                else if(searchiteam=="smartbin2"){
+                    $("smartbin1").css("display","none")
+                    $("smartbin3").css("display","none")
+                    $("#search").css("display","none")
+                    $("#notfound").css("display","none")
+                    $("#smartbin2").show()
+                    console.log("2")
+                }
+                else if(searchiteam=="smartbin3"){
+                    $("smartbin1").css("display","none")
+                    $("smartbin2").css("display","none")
+                    $("#search").css("display","none")
+                    $("#notfound").css("display","none")
+                    $("#smartbin3").show()
+                    console.log("3")
+                }
+                else{
+                    $("#notfound").show()
+                }
+               
+                
+            
+            
+            })
+        </script>
+        
+    </body>
+</html>

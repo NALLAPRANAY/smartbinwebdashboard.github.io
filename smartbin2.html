@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Smartbin2
+        </title>
+    <!-- jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <!-- jquery ui -->
+    <script src="/HTML/infosys/ui/jquery-ui-1/jquery-ui.js"></script>
+    <!-- jquery ui css -->
+    <!-- css stylesheet jquery  -->
+    <link href="/HTML/infosys/ui/jquery-ui-1/jquery-ui.css" rel="stylesheet">
+        <style>
+            body{
+                font-family: 'Roboto', sans-serif;
+            }
+            h2{
+               
+                position: absolute;
+                top:45px;
+                left:400px;
+            }
+            #iframe{
+                position: absolute;
+                top:190px;
+                left:25px;
+                
+            }
+            
+            #map{
+                
+                position: absolute;
+                top:650px;
+                left:25px;
+                height:400px;
+                width:1000px;
+                border:2px solid black
+            }
+            #location{
+                position: absolute;
+                top:540px;
+                left:420px;
+                font-size: 150%;
+            }
+            #if1{
+                font-size: 150%;
+                margin-left: 400px;
+            }
+            
+            
+        </style>
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+        integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+        crossorigin=""/>
+        <!-- Make sure you put this AFTER Leaflet's CSS -->
+            <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+            integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+            crossorigin=""></script>
+    </head>
+    <body>
+        <div>
+            <h2> Smartbin2</h2>
+        </div>
+        <div id="iframe">
+            <p id="if1">Monitoring</p>
+            <iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/12397/charts/2?&results=720&dynamic=true"></iframe>
+        </div>
+        <p id="location"> Location</p>
+        <div id="map">
+            
+        </div>
+        <script type="text/javascript">
+        
+
+
+            var map = L.map('map').setView([17.59000, 78.45000], 13);
+
+L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(map);
+
+L.marker([17.596298634163396, 78.4523400597311]).addTo(map)
+    .bindPopup('HITAM FOOTBALL GROUND<br> FILLED STSTUS OF BIN')
+    .openPopup();
+        </script>
+    </body>
+</html>

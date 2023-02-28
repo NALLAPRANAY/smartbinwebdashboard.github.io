@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            LoginPage
+        </title>
+    </head>
+    <style>
+        #college{
+            background-image: url(/HTML/Smartbin_FInal/images/hitam.jpg);
+           
+            background-size: cover; 
+            background-position: center; 
+            background-repeat: no-repeat; 
+            height: 95vh; 
+            margin: 0; 
+            
+        }
+        #page{
+            /* background-color:rgb(220, 212, 212); */
+            position:absolute;
+            top:32vh;
+            left:2vh;
+            width:500px;
+            height:400px
+
+        }
+        #loginpage{
+            background-color: aqua;
+            text-align: center;
+            margin-top: 55px;
+            margin-left:55px;
+            width:400px;
+            height:250px;
+            padding-top: 15px;
+        }
+        #emaildiv{
+            margin-bottom: 15px;
+        }
+        #loginemail{
+            margin-left: 2rem;;
+        }
+        #loginpassword{
+            margin-left: 0.8rem;
+        }
+        #login-button{
+            position:absolute;
+            top:350px;
+            left:100px;
+            
+        }
+        #signup-button{
+            position:absolute;
+            top:350px;
+            left:300px;
+        }
+        #submit-button{
+            position:absolute;
+            top:200px;
+            left:150px;
+        }
+        #submit{
+            padding:10px;
+            width:140px;
+            font-size: 100%;
+            background-color:rgb(16, 234, 16);
+            border:none;
+        }
+        #newuser{
+            color:red;
+            
+        }
+        #signuppage{
+            background-color: aqua;
+            position:absolute;
+            left:5rem;
+            top:5rem;
+            padding:2rem
+        }
+        #success{
+            background-color: rgb(25, 234, 46);
+            position: absolute;
+            top:28vh;
+            left:73vh;
+            width:400px;
+            height:268px
+
+        }
+        #name{
+            margin-left: 6rem;
+        }
+        #email{
+            margin-left: 6rem;
+   
+        }
+        #create{
+            margin-left: 26px;
+        }
+        #confirm{
+            margin-left:15px;
+        }
+        .signup-form{
+            padding-bottom: 5px;
+        }
+        #signup-submit{
+            padding:5px;
+            width:5rem;
+            margin-left: 10rem;
+            background-color:rgb(16, 234, 16);
+            border:none;
+        }
+        #loginbutton{
+            padding:5px;
+            width:8rem;
+            background-color:rgb(16, 234, 16);
+            border:none;
+
+        }
+        #signupbutton{
+            padding:5px;
+            width:8rem;
+            background-color:rgb(16, 234, 16);
+            border:none;
+        }
+        #created{
+            text-align: center;
+            margin-top:150px
+        }
+        
+    </style>
+    <!-- jquery/javascript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <body>
+        <div id="college"></div>
+    <div id="page">
+
+
+
+        <div id="loginpage" >
+            <div id="emaildiv">
+                <label for="loginemail">Email</label>
+                <input type="email"  id="loginemail" placeholder="smartbin@123gmail.com" required>
+            </div>
+            <div id="passworddiv">
+                <label for="loginpassword">Password</label>
+                <input type="password" placeholder="enter password" id="loginpassword" required>
+                <p id="error" style="display:none"></p>
+            </div>
+        
+            <div id="submit-button">
+                
+                <button id="submit">Submit</button>
+                <p id="newuser"> New user!  create account by signup </p>
+            </div>
+        </div>
+
+
+
+        <div id="signuppage"  style="display:none">
+            <div id="name-div" class="signup-form">
+                <label for="name">Name</label>
+                <input type="text" id="name" placeholder="enter full name" required>
+            </div>
+            <div id="email-div" class="signup-form">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="enter mail id" required>
+
+            </div>
+            <div id="createpassword" class="signup-form">
+                <label for="create">Create Password</label>
+                <input id="create" type="password" required>
+
+            </div>
+            <div id="confirmpassword" class="signup-form">
+                <label for="confirm">Confirm password</label>
+                <input type="password" id="confirm" required>
+            </div>
+            <div id="signupsubmit">
+                <button type="button" id="signup-submit"> Submit</button>
+            </div>
+        </div>
+
+
+            <div id="login-button">
+                <button id="loginbutton" >Login</button>
+            </div>
+            <div id="signup-button">
+                <button id="signupbutton">Signup</button>
+            </div>
+    </div>
+
+
+    <div id="success" style="display:none">
+        <p id="created">Created Account Successfully</p>
+    </div>
+
+
+        <script type="text/javascript">
+            // buttons
+            var details=[]
+            $("#loginbutton").click(function(){
+                $("#signuppage").css("display","none")
+                $("#success").css("display","none")
+                $("#loginpage").show()
+            })
+            $("#signupbutton").click(function(){
+                $("#loginpage").css("display","none")
+                $("#signuppage").show()
+            })
+
+
+          
+            
+            $("#signup-submit").click(function(){
+                 //storing details
+            var name=$("#name").val()
+            var email=$("#email").val()
+            var create=$("#create").val()
+            var confirms=$("#confirm").val()
+            if(($("#create").val())&&($("#name").val())&&($("#email").val())&&($("#confirm").val())&&(create==confirms)){
+                var person_details={name:name,email:email,password:create,confirmpass:confirms}
+                details.push(person_details)
+                console.log(details)
+                $("#success").show()
+               // $("#name").find("input[type='text'],textarea").val("")
+            }
+            })
+
+            $("#submit").click(function(){
+                var details=[{email:"pranay6243@gmail.com",password:1234},{email:"amanvnr5@gmail.com",password:1234}]
+                var emailinput=$("#loginemail").val()
+                var passwordinput=$("#loginpassword").val()
+                console.log(details[0].email)
+                for(let i=0;i<details.length;i++)
+                {
+                        if(details[i].email==emailinput & details[i].password==passwordinput){
+                        window.location.href="sidebar.html"
+                    }
+                    else{
+                        $("#error").show()
+                        $("#error").html("incorrect password or mailid")
+                        $("#error").css("color","red")
+                    }
+                }
+            })
+        
+           
+
+
+        </script>
+
+
+    </body>
+</html>
