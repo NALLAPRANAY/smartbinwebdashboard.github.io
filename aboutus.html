@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>About us</title>
+
+        <!-- jquery/javascript -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+        <!-- jquery ui -->
+      <script src="/HTML/infosys/ui/jquery-ui-1/jquery-ui.js"></script>
+      <!-- css stylesheet jquery  -->
+      <link href="/HTML/infosys/ui/jquery-ui-1/jquery-ui.css" rel="stylesheet">
+      <style>
+        h3{
+            text-align: center;
+            
+        }
+        p{
+            text-align: justify;
+        }
+        img{
+            width:600px;
+            margin-left: 300px;
+        }
+        figcaption{
+            text-align: center;
+        }
+      </style>
+    </head>
+    <body>
+        <div id="accordion">
+            <h3>Abstract</h3>
+            <div>
+                <p>
+                    With the rapid increase in urbanization, the 
+                    production of waste is increasing. Mostly the collection of waste happens at the wrong time, which is the foremost reason for the overflowing of the dustbin. Overflowing of the bin causes the 
+                    spread of a foul smell. The early waste collection would add-on 
+                    to the higher running cost and higher traffic clogging. 
+                    Therefore, there is a need to improve waste management
+                    techniques. As the world is moving towards automatedand
+                    smart techniques, there is a need to shift from traditional
+                    methodsto smart waste management. It can be achieved by
+                    using technology and data to improvise the handling and 
+                    collection of waste. This paper describes the ideology of
+                    automating the bin for opening and closing the lid and 
+                    contributing to smart waste management by introducing IoT based control and monitoring of the dustbin. IoT platforms like 
+                    Blynk IoT and Things peak are used to achieve the objective
+                </p>
+            </div>
+        
+
+        
+            <h3>Introduction</h3>
+            <div>
+                <p>
+                    India is the second most populated country in the world, waste management is of great challenge. India generates 62 
+                    million tonnes of waste annually, which is estimated to be increased to 165 million tonnes by 2030.[1,2,3] Waste 
+                    management is the biggest challenge to the authorities in developing countries, Waste leads to a great threat to the 
+                    public health and environment if it is not stored and collected properly. The filling status of the bin is imperceptible by the authorities responsible to empty it felicitously, which causes the overflowing of the dustbin. Greenhouse gases like
+                    methane, carbon monoxide, ammonia, and low level of radiation are released fromhousehold municipal waste. It not 
+                    only contributes to the production of green gases effect but also causes the exploitation of the water bodies. Rainwater
+                    easily mixes with toxic substances and drenches into nearby water bodies,[4,5] which may also ex- plot the groundwater. 
+                    The stray animals residing in urban areas of developing countries ingest the plastic waste from open dustbins causing 
+                    health hazards. Ruminal im- paction, indigestion, recurrent tympany, and many other health hazards are caused in the
+                    ruminants due to the accumulation of plastic foreign into theirrumen.
+                    The objective of an IoT-based smart dustbin is to provide access for continuous monitoring of the filling status of the bin 
+                    to the concerned authorities responsible to empty it felicitously. Therefore, giving a wide berth to the spread of 
+                    foul smells due to the overflowing of the dustbins. The following is achieved using an IoT platform, Thingspeak. 
+                    Thing speak is an IoT analytics platform that allows us to visualize and analyse the live data streams in the cloud, 
+                    without developing web software or setting up servers.To enhance the collection of waste promptly the concerned 
+                    authorities are to be notified of the filling status of a dustbin, at least when it is about to fill. To achieve the following Blynk IoT application is used. Blynk provides an automated notification triggered by the user-defined condition. The 
+                    notification could be sent as an in-application push notification, email, and SMS notification.[8] Hence these IoTbased platforms serve to attain continuous monitoring of the dustbins and notify the concerned authorities to empty the
+                    dustbin in time.
+                    Word To avoid the dissipation of foul odour from the garbage in a dustbin, it is automated to open and close the lid 
+                    on detecting humans approaching the dustbin. This will isolate waste inside the dustbin and pitch in to overcome the 
+                    ingestion of plastic into the stray animals. There are a few more auxiliary features, which will be described later in this 
+                    paper. The following features collectively contribute to smart waste management
+                    2007 The approach presented constitutes various hardware components that include sensors, actuators, and controllers. 
+                    The controllers are programmed using Arduino Integrated
+                    Development Environment (IDE) software to actuate the hardware accordingto the requirements specified by the user, 
+                    which depends on input received from sensors. Arduino IDE connects to Arduino hardware allowing us to upload the 
+                    program written in the text editor present in it.[9] The simulation of the circuit is done in tinker- cad, which will be 
+                    discussed in detail further in this paper. Tinker cad is a web application that facilitates electronic circuit simulation and 3D designing.
+                
+                    
+                </p>
+            </div>
+        
+        
+            <h3>Hardware Setup</h3>
+            <div>
+                <p>
+                    First, Arduino UNO is a microcontroller based on ATmega328P. It has 14 digital in-put/output (IO) pins, out of 
+                    these 6 pins may provide a Pulse Width Modulated (PWM) output, 6 analog input pins, and a few peripheral devices that
+                    make it handyto use.[11] NodeMCU is an open-source IoT platform. ESP8266-12E version of NodeMCU is used where E stands for Enhanced.
+
+                    The ultrasonic sensor has a receiver and transmitter. A 
+                    pulse for 10 μs is triggered from the IO port of Arduino as
+                    an input to trigger pin of an ultrasonic sensor. The ultrasonic
+                    sensor automatically sends eight 40KHz pulses and the
+                    receiver detectswhether there is a pulse received back at the 
+                    echo pin of the ultrasonic sensor.
+                    The speed of the sound is 341 m/s in air.[14] Distance is 
+                    calculated using the formula equation (1).
+                    SG90 servo motor serves as an actuator that provides a 
+                    displacement from 0° to 180°. Input to the servo motor is a 
+                    PWM signal, Which can generate a torque of 1.7 Kg-cm.[15]
+                    LCD 16x2 implies Liquid Crystal Display that has 16 columns 
+                    and two rows, so it can display a total of 32 characters. IR 
+                    sensor has a transmitter and a receiver that detects obstacles. 
+                    The working of the IR sensor is similar to that of the ultrasonic
+                    sensor, the emitter transmits infrared radiation into the
+                    surroundings andthe receiver looks for that specific radiation 
+                    to be received back. If the radiation is received it sends a high 
+                    input to the microcontroller indicating the presence of an 
+                    obstacle. A Piezo buzzer is an electronic device that is used to 
+                    produce an alarm or tone. A potentiometer is a three-terminal 
+                    variable resistor, which is used to control the contrast of the 
+                    LCD used in the smart dustbin.
+                </p>
+                    <div class="images" >
+                    <img src="/HTML/Smartbin_FInal/images/schematic 2.png" width="500" height="300" >
+                   </div>
+                    <figcaption > Fig 1 Schematic layout of smart dustbin setup
+                    </figcaption>
+                  <br>
+                   <div class="images" >
+                    <img src="/HTML/Smartbin_FInal/images/circuit using PIR.png" width="300" height="300"> 
+                  </div>
+                    <figcaption>Circuit diagram of smart dustbin setup</figcaption>
+                   
+                   <p>
+                    The schematic layout and circuit diagram is shown in Fig. 
+                    1(a). and 1(b) mark out the connection of hardware 
+                    components to the microcontroller. The digital IO pins of
+                    Arduino UNO are connected to the trigger and echo pins of 
+                    the ultrasonic sensor, buzzer, IR sensor, and respective pins of 
+                    LCD. The digital IO pin 7 of Arduino UNO is connected to 
+                    the servo motor since it can provide PWM signals to actuate it 
+                    based on the requirement. IR sensor provides a digital input to 
+                    Arduino through an IO pin that implicates obstacles 
+                    specifically humans in the following case. The buzzer receives 
+                    input from the controller and acts accordingly. 
+                    <div class="images">
+                        <img src="/HTML/Smartbin_FInal/images/hdwwr.png" width="300" height="300">
+                    </div>
+                    <figcaption> Fig 2 Smart dustbin setup</figcaption><br>
+                    
+                    
+                    The setups integrated with hardware components are 
+                    shown in Fig. 2. A Handmade Circuit Board(HCB) with a 
+                    modular arrangement is designed considering the effective 
+                    sonic sensor is placed inside the bin, which provides distance 
+                    as an input to the microcontrollers. LCD is placed over the bin, 
+                    providing visuals of the dustbin's filling status. Arduino UNO
+                    and NodeMCU are connected using a serial communication
+                    port. A piezo buzzer is connected to the circuit which 
+                    generates a specific sound in a specified situation, which will 
+                    be described later. The setup is powered using two AA-type
+                    rechargeable batteries each of 3200mAh.
+
+                </p>
+            </div>
+        
+        
+            <h3>Working</h3>
+            <div>
+                <p>
+                    The block architecture shown in Fig. 3. illustrates the 
+                    working of all the hardware components collectively for the 
+                    functioning of a smart dustbin. The input in terms of distance 
+                    received from the ultrasonic sensor is processed by the 
+                    Arduino UNO to obtain the filling status of the dustbin in 
+                    terms of percentage and displayed over the LCD. When the IR 
+                    sensor detects the human it sends a digital input to the 
+                    Arduino. Arduino checks if the dustbin is full or has space
+                    to accommodate waste, if it hasspace it sends the PWM input to the servo motor which opens the lid. If the dustbin is filled 
+                    the servo locks at its position, and simultaneously the buzzer 
+                    rings implicating that the dustbin is filled. It creates a mental 
+                    dilemma for the person that may stop him from throwing the 
+                    waste around the bin.
+                    <div class="images">
+                        <img src="/HTML/Smartbin_FInal/images/block.jpeg">
+                    </div>
+                    <figcaption>
+                       Fig 3 Block architecture of smart dustbin setup
+                    </figcaption><br>
+
+                    The filling status of the dustbin is continuously 
+                    communicated to NodeMCU from Arduino through serial 
+                    communication. NodeMCU Will push the respective data
+                    thingspeak. When the filling percentage is more than 90%, a 
+                    notification is sent to the concerned authorities to empty it, 
+                    along with the location of the bin. The use of the buzzer will 
+                    be limited since the dustbin would be emptied timely
+                </p>
+            </div>
+        
+        
+            <h3>Experimentals and Results</h3>
+            <div>
+                <p>
+                    In this section, the experimental approaches made and the 
+                    corresponding results obtained are presented.
+                    4.1. Tinkercad Simulation
+                    Before implementing hardware and code compilation in 
+                    the Arduino IDE application, the code required to obtain 
+                    output and circuit was first simulated in the tinker cad web
+                    application. At the end of this phase, the possible errors and a 
+                    list of required components were obtained
+                    <div class="images">
+                        <img src="/HTML/Smartbin_FInal/images/simulation.png">
+                    </div>
+                    <figcaption>
+                       Fig 4 Code simulation in the Tinker cad web application
+                    </figcaption><br>
+
+                    <div class="images">
+                        <img src="/HTML/Smartbin_FInal/images/Serialcomm (1).png">
+                    </div>
+                    <figcaption> Fig 5 Code simulation in Arduino IDE application</figcaption><br>
+
+                    Fig. 5. shows the sketch containing the code, the decoding 
+                    statements, and the output obtained over the serial monitor of 
+                    the Arduino IDE application. The code is opti- mized to 
+                    minimize the power consumption by the hardware 
+                    components. The circuit simulated is then implemented over 
+                    an HCB as shown in Fig. 2. Placement of the sensors and 
+                    other hardware equipment was planned in correspondence to 
+                    the requirement. The data obtained from the sensors were 
+                    further processed by the microcontroller and the output is
+                    obtained.
+                    <div class="images">
+                        <img src="/HTML/Smartbin_FInal/images/thingspeak.png">
+                    </div>
+                    <figcaption>
+                       Fig 6 The curve and widget present the filling status
+                        of dust bins in the Things peak IoT platform
+                    </figcaption><br>
+                    
+                    Fig. 6 represents the continuous data points obtained in the 
+                    thingspeak dashboard that acts as the interface for concerned 
+                    authorities to know the filling status of the dustbins at various 
+                    locations. The filling status of the two dustbins is shown 
+                    respectively in the following figure.<br>
+                    <b>Blynk IoT application output</b>
+                    When the dustbin is filled, a notification is pushed to the 
+                    concerned authority to empty the dustbin as shown in Fig.7(a). The controller is programmed to trigger the notification 
+                    every ten minutes to have a speedy response from the 
+                    authorities.
+                    <div class="images">
+                        <img src="/HTML/Smartbin_FInal/images/NOTIFICATION.png">
+                    </div>
+                    <figcaption> Fig 7a Push notification received on the phone through
+                        Blynk IoT</figcaption><br>
+
+                        <div class="images">
+                            <img src="/HTML/Smartbin_FInal/images/EMAIL ALERT.png">
+                        </div>
+                        <figcaption> Fig 7b Notification received in the mail inbox using the
+                            blynk IoT</figcaption><br>
+                    A notification is received in the inbox of the mail when the 
+                    bin is about to be filled and periodically every 10 minutes 
+                    after the bin is 100% filled as shown in fig.7(b).
+                    
+                </p>
+            </div>
+        
+
+        
+            <h3>Conclusion</h3>
+            <div>
+                <p>
+                    The proposed system helps to keep the surroundings 
+                    clean. It contributes to the initiatives like smart cities, smart 
+                    campuses, smart urban waste management, and Swachh
+                    Bharat which is initiated by Mahatma Gandhi. The lid opening 
+                    and closing are automatic, it can prevent diseases caused by 
+                    contact, such as COVID-19. Further, it prevents the overflow 
+                    of garbage in a contingent manner.
+
+                </p>
+            </div>
+        
+        
+            <h3>Future and scope</h3>
+            <div>
+                <p>
+                    <ul>
+                        <li>Build a web dashboard to create an easy
+                        interface for concerned authorities</li>
+                        <li>Introduce Machine learning for the distinction
+                        between wet and dry waste.</li>
+                        <li>Develop an E-SIM-based product to cut the
+                        dependency on Wi-Fi.</li>
+                    </ul>
+                </p>
+            </div>
+            <h2> Team members</h2>
+            <div>
+                <h3> Salava V Satyanarayana</h3>
+                <p>
+                <ul>
+                    <li>Assistant Professor @HITAM</li>
+                    <li>Electrical and Electronics Engineering</li>
+                    <li>Hyderabad Institute of Technology and 
+                    Management
+                    Hyderabad, India</li>
+                    <li>pshve2011@gmail.com</li>
+                </ul>
+                </p>
+                <h3> Aman Kumar</h3>
+                <p>
+                    <ul>
+                        <li> Student@HITAM</li>
+                    <li>Electrical and Electronics Engineering</li>
+                    <li>Hyderabad Institute of Technology and 
+                    Management
+                    Hyderabad, India</li>
+                    <li>amanvnr5@gmail.com</li>
+                    </ul>
+                </p>
+
+                <h3> Pranay Nalla</h3>
+                <p>
+                    <ul>
+                        <li> Student@HITAM</li>
+                    <li>Electrical and Electronics Engineering</li>
+                    <li>Hyderabad Institute of Technology and 
+                    Management
+                    Hyderabad, India</li>
+                    <li>pranay6243@gmail.com</li>
+                    </ul>
+                </p>
+            </div>
+        </div>
+        <script type="text/javascript">
+            $("#accordion").accordion({
+                collapsible: true,
+                heightStyle: "content",
+             
+            })
+
+        </script>
+    </body>
+</html>
